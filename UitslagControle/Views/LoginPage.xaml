@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="UitslagControle.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Style="{StaticResource PageStyle}"
+    mc:Ignorable="d">
+    <Grid
+        x:Name="ContentArea"
+        Margin="{StaticResource MediumLeftRightMargin}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            x:Uid="Login_Title"
+            Style="{StaticResource PageTitleStyle}" />
+        <Grid
+            Grid.Row="1" 
+            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
+                Place your content here.-->
+
+            <StackPanel Width="200" VerticalAlignment="Center">
+                <TextBox x:Name="UsernameTextbox" Margin="10" Header="Gebruikersnaam" PlaceholderText="Gebruikersnaam"/>
+                <PasswordBox x:Name="PasswordBox"  Margin="10" Header="Wachtwoord" RelativePanel.Below="UsernameTextbox" PlaceholderText="Wachtwoord" KeyDown="PasswordBox_KeyDown"/>
+                <Button x:Name="InlogButton" Margin="10" HorizontalAlignment="Stretch" Height="32" RelativePanel.Below="PasswordBox" Click="InlogButton_Click">Inloggen</Button>
+                <ProgressRing x:Name="ProgressLogin"  IsActive="False" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
