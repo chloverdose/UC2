@@ -8,28 +8,23 @@
     mc:Ignorable="d">
     <Grid
         x:Name="ContentArea"
-        Margin="{StaticResource MediumLeftRightMargin}">
+        Margin="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="48"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock
-            Grid.Row="0"
-            x:Uid="Login_Title"
-            Style="{StaticResource PageTitleStyle}" />
-        <Grid
-            Grid.Row="1" 
-            Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
-            <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
-                Place your content here.-->
+        <TextBlock Grid.Row="0" x:Uid="Login_Title" Style="{StaticResource PageTitleStyle}"/>
 
-            <StackPanel Width="200" VerticalAlignment="Center">
-                <TextBox x:Name="UsernameTextbox" Margin="10" Header="Gebruikersnaam" PlaceholderText="Gebruikersnaam"/>
-                <PasswordBox x:Name="PasswordBox"  Margin="10" Header="Wachtwoord" RelativePanel.Below="UsernameTextbox" PlaceholderText="Wachtwoord" KeyDown="PasswordBox_KeyDown"/>
-                <Button x:Name="InlogButton" Margin="10" HorizontalAlignment="Stretch" Height="32" RelativePanel.Below="PasswordBox" Click="InlogButton_Click">Inloggen</Button>
+        <Grid Grid.Row="1" Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
+
+            <StackPanel Width="400" VerticalAlignment="Center">
+                <TextBox x:Name="UsernameTextbox" Margin="8" Header="Gebruikersnaam" PlaceholderText="Gebruikersnaam" FontSize="{StaticResource LargeFontSize}"/>
+                <PasswordBox x:Name="PasswordBox"  Margin="8" Header="Wachtwoord" RelativePanel.Below="UsernameTextbox" PlaceholderText="Wachtwoord" KeyDown="PasswordBox_KeyDown" FontSize="{StaticResource LargeFontSize}"/>
+                <Button x:Name="InlogButton" Margin="8" HorizontalAlignment="Stretch" RelativePanel.Below="PasswordBox" Click="InlogButton_Click" Content="Inloggen" Style="{StaticResource ButtonRevealStyle}" FontSize="{StaticResource LargeFontSize}"/>
                 <ProgressRing x:Name="ProgressLogin"  IsActive="False" />
             </StackPanel>
+            
         </Grid>
     </Grid>
 </Page>
