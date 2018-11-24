@@ -41,6 +41,9 @@ namespace UitslagControle.Views
                 {
                     Network getdata = new Network();
                     string returndata = await getdata.GetProfileValuesAsync(UsernameTextbox.Text);
+                    //Logging startlogging = new Logging();
+                    //await startlogging.StartSessionAsync();
+
 
                     this.Frame.Navigate(typeof(InvoerDossierPage));
                 }

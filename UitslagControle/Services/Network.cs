@@ -14,7 +14,7 @@ namespace UitslagControle.Services
         readonly string kewillEnv = "2";
         readonly string skipEU = "false";
 
-        private async Task<string> HttpGetAsync(Uri url)
+        public async Task<string> HttpGetAsync(Uri url)
         {
             HttpClient httpClient = new HttpClient();
             HttpResponseMessage httpResponse = new HttpResponseMessage();
@@ -32,12 +32,12 @@ namespace UitslagControle.Services
             }
         }
 
-        private Task<string> HttpPostAsync(Uri url)
+        public Task<string> HttpPostAsync(Uri url)
         {
             throw new NotImplementedException();
         }
 
-        private Task<string> HttpPostAsync(Uri url, String body)
+        public Task<string> HttpPostAsync(Uri url, String body)
         {
             throw new NotImplementedException();
         }
