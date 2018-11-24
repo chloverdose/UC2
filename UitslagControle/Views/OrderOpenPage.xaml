@@ -4,11 +4,24 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:media="using:Windows.UI.Xaml.Media"
     Style="{StaticResource PageStyle}"
     mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <media:AcrylicBrush x:Key="RedAcrylicBrush" BackgroundSource="Backdrop"
+         TintOpacity="0.5" TintColor="#FFFF0000" FallbackColor="#FF222222"/>
+            <media:AcrylicBrush x:Key="GreenAcrylicBrush" BackgroundSource="Backdrop"
+         TintOpacity="0.5" TintColor="#FF00FF00" FallbackColor="#FF222222"/>
+        </ResourceDictionary>
+
+    </Page.Resources>
+    
     <Grid
         x:Name="ContentArea"
         Margin="0">
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="48"/>
             <RowDefinition Height="*"/>
@@ -19,8 +32,7 @@
             x:Uid="OrderOpen_Title"
             Style="{StaticResource PageTitleStyle}" />
         <Grid Grid.Row="1"
-            Background="#d5d700"
-        
+            Background="{StaticResource SystemControlPageBackgroundChromeLowBrush}"
             Margin="0">
 
             <Grid.ColumnDefinitions>
@@ -203,119 +215,119 @@
                 </Border>
             </Grid>
 
-            <Grid Grid.Column="1" Margin="8">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
+            <Grid Grid.Column="1" Margin="8" x:Name="PanelGrid" VerticalAlignment="Stretch">
 
-                <Grid x:Name="PanelGrid" Grid.Row="0">
-                    <StackPanel>
-                        <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Verwacht / Definitief producten: 1/1" FontSize="{StaticResource LargeFontSize}"/>
-                            <Button Grid.Column="1" Margin="20" Height="60" Width="60" FontSize="{StaticResource LargeFontSize}"
-                                    FontFamily="Segoe MDL2 Assets" Content="&#xE8FB;" Style="{StaticResource ButtonRevealStyle}"/>
-                        </Grid>
-                        <AppBarSeparator Height="8"/>
+                    <ScrollViewer Height="Auto" VerticalScrollMode="Enabled" VerticalScrollBarVisibility="Visible" IsVerticalScrollChainingEnabled="True" VerticalAlignment="Top">
+                        <StackPanel>
+                            <Grid Background="{ThemeResource RedAcrylicBrush}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Verwacht / Definitief producten: 1/1" TextWrapping="WrapWholeWords" FontSize="{StaticResource LargeFontSize}"/>
+                                <Button Grid.Column="1" Margin="20" Height="60" Width="60" FontSize="{StaticResource LargeFontSize}"
+                                        FontFamily="Segoe MDL2 Assets" Content="&#xE8FB;" Style="{StaticResource ButtonRevealStyle}"/>
+                            </Grid>
+                            <AppBarSeparator Height="8"/>
 
-                        <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
-                                <TextBlock Margin="20,20,20,0" Text="Pick:" FontSize="{StaticResource LargeFontSize}"/>
-                                <TextBlock Margin="20,0,20,20" Text="Instructie asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd"
-                                           TextWrapping="WrapWholeWords" FontSize="{StaticResource LargeFontSize}"/>
+                            <Grid Background="{ThemeResource GreenAcrylicBrush}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                    <TextBlock Margin="20,20,20,0" Text="Pick:" FontSize="{StaticResource LargeFontSize}"/>
+                                    <TextBlock Margin="20,0,20,20" Text="Instructie asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd asd"
+                                               TextWrapping="WrapWholeWords" FontSize="{StaticResource LargeFontSize}"/>
+                                </StackPanel>
+                                <Button Grid.Column="1" Margin="20" Height="60" Width="60" FontSize="{StaticResource LargeFontSize}"
+                                        FontFamily="Segoe MDL2 Assets" Content="&#xE8FB;" Style="{StaticResource ButtonRevealStyle}"/>
+                            </Grid>
+                            <AppBarSeparator Height="8"/>
+
+                            <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Let op: Aantal VPE wijkt af van aantal COLLI. Akkoord?"
+                                           FontSize="{StaticResource LargeFontSize}" TextWrapping="WrapWholeWords"/>
+                                <Button Grid.Column="1" Margin="20" Height="60" Width="60" FontSize="{StaticResource LargeFontSize}"
+                                        FontFamily="Segoe MDL2 Assets" Content="&#xE8FB;" Style="{StaticResource ButtonRevealStyle}"/>
+                            </Grid>
+                            <AppBarSeparator Height="8"/>
+
+                            <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock Margin="20" Text="Telefoonnummer of Email niet gevonden. Order kan niet afgerond worden." FontSize="{StaticResource LargeFontSize}" TextWrapping="WrapWholeWords"/>
+                                </StackPanel>
+                            </Grid>
+                            <AppBarSeparator Height="8"/>
+
+                            <StackPanel Background="{ThemeResource SystemControlAcrylicElementBrush}">
+                                <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Afmetingen:" FontSize="{StaticResource LargeFontSize}"/>
+                                <RelativePanel>
+                                    <TextBlock Name="nummer1" Margin="20" VerticalAlignment="Center" Text="1" FontSize="{StaticResource LargeFontSize}"/>
+                                    <TextBox Name="lengte1" RelativePanel.RightOf="nummer1" MinWidth="100" Header="Lengte"
+                                             Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
+                                    <TextBox Name="breedte1" RelativePanel.RightOf="lengte1" MinWidth="100" Header="Breedte"
+                                             Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
+                                    <TextBox Name="hoogte1" RelativePanel.RightOf="breedte1" MinWidth="100" Header="Hoogte"
+                                             Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
+                                    <TextBox Name="gewicht1" RelativePanel.RightOf="hoogte1" MinWidth="100" Header="Kilogram"
+                                             Margin="20,0,20,20" VerticalAlignment="Center" FontSize="{StaticResource MediumFontSize}"/>
+                                    <Button RelativePanel.RightOf="gewicht1" Margin="20,0,20,20" Height="60" Width="60"
+                                            Style="{StaticResource PaneToggleButtonStyle}" FontSize="{StaticResource LargeFontSize}">
+                                        <SymbolIcon Symbol="Download"/>
+                                    </Button>
+                                </RelativePanel>
+
+                                <RelativePanel>
+                                    <TextBlock Name="nummer2" Margin="20" VerticalAlignment="Center" Text="2" FontSize="{StaticResource LargeFontSize}"/>
+                                    <TextBox Name="lengte2" RelativePanel.RightOf="nummer2" MinWidth="100" Header="Lengte"
+                                             Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
+                                    <TextBox Name="breedte2" RelativePanel.RightOf="lengte2" MinWidth="100" Header="Breedte"
+                                             Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
+                                    <TextBox Name="hoogte2" RelativePanel.RightOf="breedte2" MinWidth="100" Header="Hoogte"
+                                             Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
+                                    <TextBox Name="gewicht2" RelativePanel.RightOf="hoogte2" MinWidth="100" Header="Kilogram"
+                                             Margin="20,0,20,20" VerticalAlignment="Center" FontSize="{StaticResource MediumFontSize}"/>
+                                    <Button RelativePanel.RightOf="gewicht2" Margin="20,0,20,20" Height="60" Width="60"
+                                            Content="&#xE896;" FontSize="{StaticResource LargeFontSize}" Style="{StaticResource ButtonRevealStyle}"/>
+                                </RelativePanel>
                             </StackPanel>
-                            <Button Grid.Column="1" Margin="20" Height="60" Width="60" FontSize="{StaticResource LargeFontSize}"
-                                    FontFamily="Segoe MDL2 Assets" Content="&#xE8FB;" Style="{StaticResource ButtonRevealStyle}"/>
-                        </Grid>
-                        <AppBarSeparator Height="8"/>
+                            <AppBarSeparator Height="8"/>
 
-                        <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Let op: Aantal VPE wijkt af van aantal COLLI. Akkoord?"
-                                       FontSize="{StaticResource LargeFontSize}"/>
-                            <Button Grid.Column="1" Margin="20" Height="60" Width="60" FontSize="{StaticResource LargeFontSize}"
-                                    FontFamily="Segoe MDL2 Assets" Content="&#xE8FB;" Style="{StaticResource ButtonRevealStyle}"/>
-                        </Grid>
-                        <AppBarSeparator Height="8"/>
+                            <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Geselecteerde vervoerder:" FontSize="{StaticResource LargeFontSize}"/>
+                                <ComboBox Grid.Column="1" Margin="20" PlaceholderText="Selecteer een vervoerer" MinWidth="400" FontSize="{StaticResource LargeFontSize}">
+                                    <x:String>CTS</x:String>
+                                    <x:String>PostNL</x:String>
+                                    <x:String>ON-HOLD</x:String>
+                                    <x:String>UPS</x:String>
+                                </ComboBox>
+                            </Grid>
+                            <AppBarSeparator Height="8"/>
 
-                        <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0">
-                                <TextBlock Margin="20" Text="Telefoonnummer of Email niet gevonden. Order kan niet afgerond worden." FontSize="{StaticResource LargeFontSize}"/>
-                            </StackPanel>
-                        </Grid>
-                        <AppBarSeparator Height="8"/>
-
-                        <StackPanel Background="{ThemeResource SystemControlAcrylicElementBrush}">
-                            <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Afmetingen:" FontSize="{StaticResource LargeFontSize}"/>
-                            <RelativePanel>
-                                <TextBlock Name="nummer1" Margin="20" VerticalAlignment="Center" Text="1" FontSize="{StaticResource LargeFontSize}"/>
-                                <TextBox Name="lengte1" RelativePanel.RightOf="nummer1" MinWidth="100" Header="Lengte"
-                                         Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
-                                <TextBox Name="breedte1" RelativePanel.RightOf="lengte1" MinWidth="100" Header="Breedte"
-                                         Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
-                                <TextBox Name="hoogte1" RelativePanel.RightOf="breedte1" MinWidth="100" Header="Hoogte"
-                                         Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
-                                <TextBox Name="gewicht1" RelativePanel.RightOf="hoogte1" MinWidth="100" Header="Kilogram"
-                                         Margin="20,0,20,20" VerticalAlignment="Center" FontSize="{StaticResource MediumFontSize}"/>
-                                <Button RelativePanel.RightOf="gewicht1" Margin="20,0,20,20" Height="60" Width="60"
-                                        Content="&#xE896;" FontSize="{StaticResource LargeFontSize}" Style="{StaticResource ButtonRevealStyle}"/>
-                            </RelativePanel>
-
-                            <RelativePanel>
-                                <TextBlock Name="nummer2" Margin="20" VerticalAlignment="Center" Text="2" FontSize="{StaticResource LargeFontSize}"/>
-                                <TextBox Name="lengte2" RelativePanel.RightOf="nummer2" MinWidth="100" Header="Lengte"
-                                         Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
-                                <TextBox Name="breedte2" RelativePanel.RightOf="lengte2" MinWidth="100" Header="Breedte"
-                                         Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
-                                <TextBox Name="hoogte2" RelativePanel.RightOf="breedte2" MinWidth="100" Header="Hoogte"
-                                         Margin="20,0,20,20" FontSize="{StaticResource MediumFontSize}"/>
-                                <TextBox Name="gewicht2" RelativePanel.RightOf="hoogte2" MinWidth="100" Header="Kilogram"
-                                         Margin="20,0,20,20" VerticalAlignment="Center" FontSize="{StaticResource MediumFontSize}"/>
-                                <Button RelativePanel.RightOf="gewicht2" Margin="20,0,20,20" Height="60" Width="60"
-                                        Content="&#xE896;" FontSize="{StaticResource LargeFontSize}" Style="{StaticResource ButtonRevealStyle}"/>
-                            </RelativePanel>
+                            <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Reden voor ON-HOLD:" FontSize="{StaticResource LargeFontSize}"/>
+                                <TextBox Grid.Column="1" Margin="20" MinWidth="400" FontSize="{StaticResource LargeFontSize}" FontFamily="Segoe MDL2 Assets"/>
+                            </Grid>
                         </StackPanel>
-                        <AppBarSeparator Height="8"/>
+                    </ScrollViewer>
 
-                        <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Geselecteerde vervoerder:" FontSize="{StaticResource LargeFontSize}"/>
-                            <ComboBox Grid.Column="1" Margin="20" PlaceholderText="Selecteer een vervoerer" MinWidth="400" FontSize="{StaticResource LargeFontSize}">
-                                <x:String>CTS</x:String>
-                                <x:String>PostNL</x:String>
-                                <x:String>ON-HOLD</x:String>
-                                <x:String>UPS</x:String>
-                            </ComboBox>
-                        </Grid>
-                        <AppBarSeparator Height="8"/>
-
-                        <Grid Background="{ThemeResource SystemControlAcrylicElementBrush}">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Reden voor ON-HOLD:" FontSize="{StaticResource LargeFontSize}"/>
-                            <TextBox Grid.Column="1" Margin="20" MinWidth="400" FontSize="{StaticResource LargeFontSize}" FontFamily="Segoe MDL2 Assets"/>
-                        </Grid>
-                    </StackPanel>
-                </Grid>
             </Grid>
         </Grid>
     </Grid>
