@@ -11,9 +11,9 @@
     <Page.Resources>
         <ResourceDictionary>
             <media:AcrylicBrush x:Key="RedAcrylicBrush" BackgroundSource="Backdrop"
-         TintOpacity="0.5" TintColor="#FFFF0000" FallbackColor="#FF222222"/>
+         TintOpacity="0.3" TintColor="#FFFF0000" FallbackColor="#FF222222"/>
             <media:AcrylicBrush x:Key="GreenAcrylicBrush" BackgroundSource="Backdrop"
-         TintOpacity="0.5" TintColor="#FF00FF00" FallbackColor="#FF222222"/>
+         TintOpacity="0.3" TintColor="#FF00FF00" FallbackColor="#FF222222"/>
         </ResourceDictionary>
 
     </Page.Resources>
@@ -308,7 +308,7 @@
                                     <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Column="0" Margin="20" VerticalAlignment="Center" Text="Geselecteerde vervoerder:" FontSize="{StaticResource LargeFontSize}"/>
-                                <ComboBox Grid.Column="1" Margin="20" PlaceholderText="Selecteer een vervoerer" MinWidth="400" FontSize="{StaticResource LargeFontSize}">
+                                <ComboBox Grid.Column="1" Margin="20" PlaceholderText="Selecteer een vervoerder" MinWidth="400" FontSize="{StaticResource LargeFontSize}">
                                     <x:String>CTS</x:String>
                                     <x:String>PostNL</x:String>
                                     <x:String>ON-HOLD</x:String>

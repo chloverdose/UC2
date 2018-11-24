@@ -44,7 +44,7 @@ namespace UitslagControle.Views
                     //Logging startlogging = new Logging();
                     //await startlogging.StartSessionAsync();
 
-
+                    //DossierTextBox.Focus(FocusState.Programmatic);
                     this.Frame.Navigate(typeof(InvoerDossierPage));
                 }
             }

@@ -50,9 +50,9 @@
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
 
-            <StackPanel Width="200" VerticalAlignment="Center">
-                <TextBox x:Name="DossierTextBox" Margin="10" Header="Dossiernummer" PlaceholderText="0000000000" KeyDown="DossierTextBox_KeyDown"/>
-                <Button x:Name="InvoerButton" Margin="10" HorizontalAlignment="Stretch" Height="32" RelativePanel.Below="DossierTextBox" Click="InvoerButton_ClickAsync">Openen</Button>
+            <StackPanel Width="300" VerticalAlignment="Center">
+                <TextBox x:Name="DossierTextBox" FontSize="{StaticResource LargeFontSize}" Margin="10" Header="Dossiernummer" PlaceholderText="0000000000" KeyDown="DossierTextBox_KeyDown"/>
+                <Button x:Name="InvoerButton" FontSize="{StaticResource LargeFontSize}" Margin="10" HorizontalAlignment="Stretch" RelativePanel.Below="DossierTextBox" Click="InvoerButton_ClickAsync">Openen</Button>
                 <ProgressRing x:Name="ProgressDossier" IsActive="False"/>
             </StackPanel>
         </Grid>
