@@ -48,6 +48,12 @@ namespace UitslagControle.Views
                     this.Frame.Navigate(typeof(InvoerDossierPage));
                 }
             }
+            else
+            {
+                ToolTip tip = new ToolTip();
+                tip.Content = "Gebruikersnaam en wachtwoord mogen niet leeg zijn.";
+                ToolTipService.SetToolTip(InlogButton, tip);
+            }
 
             ProgressLogin.IsActive = false;
         }
