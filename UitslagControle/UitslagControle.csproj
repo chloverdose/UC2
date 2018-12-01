@@ -25,6 +25,7 @@
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
     <PackageCertificateThumbprint>27B3623A22D73AC3319A07CA12A8A7420C4AF4FA</PackageCertificateThumbprint>
+    <AppxPackageDir>F:\CTS GROUP NL\CTS-ICT\Software\UCT2_UWP_DEV\</AppxPackageDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>

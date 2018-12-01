@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using UitslagControle.Services;
+using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
 
 namespace UitslagControle.Views
@@ -35,23 +36,33 @@ namespace UitslagControle.Views
 
             if (!String.IsNullOrWhiteSpace(UsernameTextbox.Text) && !String.IsNullOrWhiteSpace(PasswordBox.Password))
             {
-                Auth auth = new Auth();
-
-                if (await auth.LdapAsync(UsernameTextbox.Text, PasswordBox.Password))
+                try
                 {
-                    Network getdata = new Network();
-                    string returndata = await getdata.GetProfileValuesAsync(UsernameTextbox.Text);
-                    //Logging startlogging = new Logging();
-                    //await startlogging.StartSessionAsync();
+                    Auth auth = new Auth();
+                    if (await auth.LdapAsync(UsernameTextbox.Text, PasswordBox.Password))
+                    {
+                        Network getdata = new Network();
+                        string returndata = await getdata.GetProfileValuesAsync(UsernameTextbox.Text);
+                        //Logging startlogging = new Logging();
+                        //await startlogging.StartSessionAsync();
 
-                    //DossierTextBox.Focus(FocusState.Programmatic);
-                    this.Frame.Navigate(typeof(InvoerDossierPage));
+                        //Navigeer naar volgende pagina
+                        this.Frame.Navigate(typeof(InvoerDossierPage));
+                    }
                 }
+                catch
+                {
+                    var dialog = new MessageDialog("NOPE");
+                    await dialog.ShowAsync();
+                }
+                
             }
             else
             {
-                ToolTip tip = new ToolTip();
-                tip.Content = "Gebruikersnaam en wachtwoord mogen niet leeg zijn.";
+                ToolTip tip = new ToolTip
+                {
+                    Content = "Gebruikersnaam en wachtwoord mogen niet leeg zijn."
+                };
                 ToolTipService.SetToolTip(InlogButton, tip);
             }
 
