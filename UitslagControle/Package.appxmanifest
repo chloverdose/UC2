@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:genTemplate="http://schemas.microsoft.com/appx/developer/windowsTemplateStudio" IgnorableNamespaces="uap mp genTemplate">
-  <Identity Name="338B0309-4927-49A2-8343-8F99A047F1F9" Publisher="CN=mikae" Version="1.0.0.0" />
+  <Identity Name="338B0309-4927-49A2-8343-8F99A047F1F9" Publisher="CN=mikae" Version="0.1.4.0" />
   <mp:PhoneIdentity PhoneProductId="338B0309-4927-49A2-8343-8F99A047F1F9" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>UitslagControle</DisplayName>
