@@ -28,21 +28,19 @@
             Grid.Row="1"
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
 
-            <StackPanel
-                VerticalAlignment="Center"
-                Margin="20">
-                <TextBlock Text="Snel afronden:" Style="{ThemeResource BaseTextBlockStyle}"/>
-                <RadioButton x:Name="Option1RadioButton" Content="Standaard" Checked="Option1RadioButton_Checked" IsChecked="True"/>
-                <RadioButton x:Name="Option2RadioButton" Content="Envelop" Checked="Option2RadioButton_Checked"/>
-                <RadioButton x:Name="Option3RadioButton" Content="Pakket" Checked="Option3RadioButton_Checked"/>
-                <RadioButton x:Name="Option4RadioButton" Content="Mconomy" Checked="Option4RadioButton_Checked"/>
-                <RadioButton x:Name="Option5RadioButton" Content="Morrison" Checked="Option5RadioButton_Checked"/>
-                <RadioButton x:Name="Option6RadioButton" Content="Secrid" Checked="Option6RadioButton_Checked"/>
-                <RadioButton x:Name="Option7RadioButton" Content="HTC" Checked="Option7RadioButton_Checked"/>
+            <StackPanel VerticalAlignment="Center" Margin="20">
+                <TextBlock Text="Snel afronden:" FontSize="{ThemeResource LargeFontSize}" />
+                <RadioButton x:Name="Option1RadioButton" Content="Standaard" Checked="Option1RadioButton_Checked" IsChecked="True" IsTabStop="False"/>
+                <RadioButton x:Name="Option2RadioButton" Content="Envelop" Checked="Option2RadioButton_Checked" IsTabStop="False"/>
+                <RadioButton x:Name="Option3RadioButton" Content="Pakket" Checked="Option3RadioButton_Checked" IsTabStop="False"/>
+                <RadioButton x:Name="Option4RadioButton" Content="Mconomy" Checked="Option4RadioButton_Checked" IsTabStop="False"/>
+                <RadioButton x:Name="Option5RadioButton" Content="Morrison" Checked="Option5RadioButton_Checked" IsTabStop="False"/>
+                <RadioButton x:Name="Option6RadioButton" Content="Secrid" Checked="Option6RadioButton_Checked" IsTabStop="False"/>
+                <RadioButton x:Name="Option7RadioButton" Content="HTC" Checked="Option7RadioButton_Checked" IsTabStop="False"/>
             </StackPanel>
 
         </Grid>
-        
+
         <Grid
             Grid.Column="1"
             Grid.Row="1" 

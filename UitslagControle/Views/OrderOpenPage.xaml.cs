@@ -30,12 +30,37 @@ namespace UitslagControle.Views
 
         private void AantalPlus_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-
+            try
+            {
+                int i = Convert.ToInt32(AantalBox.Text);
+                AantalBox.Text = (++i).ToString();
+            }
+            catch
+            {
+                AantalBox.Text = "0";
+            }
         }
 
         private void AantalMin_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+            try
+            {
+                int i = Convert.ToInt32(AantalBox.Text);
+                AantalBox.Text = (--i).ToString();
+                if (i < 0)
+                {
+                    AantalBox.Text = "0";
+                }
+            }
+            catch
+            {
+                AantalBox.Text = "0";
+            }
+        }
 
+        private void VerwachtCheckbox_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            //VerwachtPanel.Background = 
         }
     }
 }
