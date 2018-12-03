@@ -16,7 +16,7 @@
             <NavigationViewItem  Content="Order [CLOSED]" Tag="SamplePage4" />
         </NavigationView.MenuItems>
         <NavigationView.PaneHeader>
-            <Image Source="Assets/FS_logo2.png" />
+            <Image Source="Assets\FS_logo2.png" />
         </NavigationView.PaneHeader>
         <Frame x:Name="contentFrame"/>
     </NavigationView>
