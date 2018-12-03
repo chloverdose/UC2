@@ -15,6 +15,9 @@
             <NavigationViewItem  Content="Order [OPEN]" Tag="SamplePage3" />
             <NavigationViewItem  Content="Order [CLOSED]" Tag="SamplePage4" />
         </NavigationView.MenuItems>
+        <NavigationView.PaneHeader>
+            <NavigationViewItem Content="asdasd"/>
+        </NavigationView.PaneHeader>
         <Frame x:Name="contentFrame"/>
     </NavigationView>
 
