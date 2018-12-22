@@ -32,9 +32,22 @@ namespace UitslagControle.Services
             }
         }
 
-        public Task<string> HttpPostAsync(Uri url)
+        public async Task<string> HttpPostAsync(Uri url)
         {
-            throw new NotImplementedException();
+            HttpClient httpClient = new HttpClient();
+            HttpResponseMessage httpResponse = new HttpResponseMessage();
+
+            try
+            {
+                //Send the GET request
+                httpResponse = await httpClient.GetAsync(url);
+                httpResponse.EnsureSuccessStatusCode();
+                return await httpResponse.Content.ReadAsStringAsync();
+            }
+            catch (Exception ex)
+            {
+                return "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
+            }
         }
 
         public Task<string> HttpPostAsync(Uri url, String body)

@@ -129,6 +129,7 @@
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
     <Compile Include="Services\Auth.cs" />
     <Compile Include="Services\Logging.cs" />
+    <Compile Include="Services\Misc.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\Network.cs" />
     <Compile Include="Services\SerialService.cs" />

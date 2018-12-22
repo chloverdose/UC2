@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using UitslagControle.Services;
 using Windows.UI.Xaml.Controls;
 
 namespace UitslagControle.Views
@@ -30,37 +30,44 @@ namespace UitslagControle.Views
 
         private void AantalPlus_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            try
-            {
-                int i = Convert.ToInt32(AantalBox.Text);
-                AantalBox.Text = (++i).ToString();
-            }
-            catch
-            {
-                AantalBox.Text = "0";
-            }
+            Misc misc = new Misc();
+            misc.PlusOne(AantalBox);
         }
 
         private void AantalMin_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            try
-            {
-                int i = Convert.ToInt32(AantalBox.Text);
-                AantalBox.Text = (--i).ToString();
-                if (i < 0)
-                {
-                    AantalBox.Text = "0";
-                }
-            }
-            catch
-            {
-                AantalBox.Text = "0";
-            }
+            Misc misc = new Misc();
+            misc.MinOne(AantalBox);
         }
 
         private void VerwachtCheckbox_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             //VerwachtPanel.Background = 
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (VervoerderCombobox.SelectedValue.Equals("ON-HOLD"))
+            {
+                RedenPanel.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            }
+            else
+            {
+                RedenPanel.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            }
+        }
+
+        private async void DossierafrondenButton_ClickAsync(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            
+        }
+
+        private async void DossierverwijderenButton1_ClickAsync(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            Network net = new Network();
+            string response = await net.PostDeleteFileDataAsync(DossiernummerLabel.Text);
+
+            this.Frame.Navigate(typeof(InvoerDossierPage));
         }
     }
 }
