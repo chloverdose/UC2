@@ -20,8 +20,10 @@
         <StackPanel>
             <TextBlock x:Uid="AfterUpdate_Body" TextWrapping="WrapWholeWords">
                 <Run>Aanpassingen:</Run><LineBreak/>
+                <Run>Nieuwe Target (1809) en min version (1803)</Run><LineBreak/>
                 <Run></Run><LineBreak/>
                 <Run>Nieuwe Features:</Run><LineBreak/>
+                <Run>Geen</Run><LineBreak/>
                 <Run></Run><LineBreak/>
                 <Run>Known bugs:</Run><LineBreak/>
                 <Run>Geen</Run><LineBreak/>
