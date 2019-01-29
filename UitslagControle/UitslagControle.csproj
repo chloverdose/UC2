@@ -12,7 +12,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -22,10 +22,9 @@
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x64</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>04798796B5126957AFABA014286BA2E3753651FD</PackageCertificateThumbprint>
     <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
-    <PackageCertificateThumbprint>27B3623A22D73AC3319A07CA12A8A7420C4AF4FA</PackageCertificateThumbprint>
-    <AppxPackageDir>F:\CTS GROUP NL\CTS-ICT\Software\UCT2_UWP_DEV\</AppxPackageDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -101,20 +100,20 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.1.5</Version>
+      <Version>6.1.9</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.0.180724003-prerelease</Version>
+      <Version>2.0.181018003</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed">
       <Version>2.0.0</Version>
     </PackageReference>
     <!-- Nuget package references -->
     <PackageReference Include="Microsoft.Toolkit.Uwp">
-      <Version>3.0.0</Version>
+      <Version>5.0.0</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>11.0.2</Version>
+      <Version>12.0.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -129,12 +128,14 @@
     <Compile Include="Activation\DefaultLaunchActivationHandler.cs" />
     <Compile Include="Services\Auth.cs" />
     <Compile Include="Services\Logging.cs" />
-    <Compile Include="Services\Misc.cs" />
     <Compile Include="Services\NavigationService.cs" />
     <Compile Include="Services\Network.cs" />
     <Compile Include="Services\SerialService.cs" />
     <Compile Include="Services\ThemeSelectorService.cs" />
     <Compile Include="Services\WhatsNewDisplayService.cs" />
+    <Compile Include="Views\FramePage.xaml.cs">
+      <DependentUpon>FramePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\InvoerBulkPage.xaml.cs">
       <DependentUpon>InvoerBulkPage.xaml</DependentUpon>
     </Compile>
@@ -187,6 +188,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\FramePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\InvoerBulkPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -233,6 +238,8 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\FS_logo.png" />
+    <Content Include="Assets\FS_logo2.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-125.png" />
     <Content Include="Assets\LargeTile.scale-150.png" />
@@ -283,8 +290,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".editorconfig" />
-    <None Include="MikaKey.snk" />
-    <None Include="MikaKey2.pfx" />
     <None Include="UitslagControle_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -295,12 +300,6 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>MikaKey2.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
