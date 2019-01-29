@@ -11,7 +11,9 @@
     <Grid>
         <NavigationView x:Name="nvMain" PaneDisplayMode="Top" SelectionFollowsFocus="Enabled">
             <NavigationView.MenuItems>
-                <NavigationViewItem  Content="Main" Tag="LoginPage" IsSelected="True"/>
+                <NavigationViewItem  Content="Uitslag" Tag="LoginPage" IsSelected="True"/>
+                <NavigationViewItem  Content="QR" Tag="InvoerQRPage"/>
+                <NavigationViewItem  Content="Test" Tag="test"/>
             </NavigationView.MenuItems>
             <Frame x:Name="ContentArea"/>
         </NavigationView>
